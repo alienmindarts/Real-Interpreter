@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chat Origin</title>
+        <meta name="description" content="" />
+        <link
+            rel="shortcut icon"
+            href="./assets/logo.png"
+            type="image/x-icon"
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Title of the project" />
+        <meta property="og:description" content="" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://github.com/PaulleDemon" />
+        <!--Replace with the current website url-->
+        <meta property="og:image" content="" />
+
+        <!-- <link rel="stylesheet" href="../../tailwind-css/tailwind-runtime.css"> -->
+        <link rel="stylesheet" href="./css/tailwind-build.css" />
+        <link rel="stylesheet" href="css/index.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#fff]">
+        <header
+            class="tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around"
+        >
+            <a class="tw-h-[50px] tw-w-[50px] tw-p-[4px]" href="">
+                <img
+                    src="./assets/logo.png"
+                    alt="logo"
+                    class="tw-object tw-h-full tw-w-full"
+                />
+            </a>
+            <div
+                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+                id="collapsed-header-items"
+            >
+                <div
+                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base tw-text-black max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
+                >
+                    <a class="header-links" href=""> About us </a>
+                    <a class="header-links" href="#pricing"> Pricing </a>
+                    <a class="header-links" href=""> Features </a>
+                    <a class="header-links" href=""> Blog </a>
+                    <a class="header-links" href=""> Contact us </a>
+                </div>
+                <div
+                    class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
+                >
+                    <a
+                        href="https://realinterpreter.glide.page"
+                        aria-label="signup"
+                        class="tw-rounded-md tw-bg-primary tw-px-3 tw-py-2 tw-text-white tw-transition-transform tw-duration-[0.3s] hover:tw-translate-x-2"
+                    >
+                        <span>Install</span>
+                    </a>
+                </div>
+            </div>
+            <button
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
+                onclick="toggleHeader()"
+                aria-label="menu"
+                id="collapse-btn"
+            ></button>
+        </header>
+
+        <section
+            class="tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-lg:tw-p-4 max-md:tw-mt-[50px]"
+        >
+            <div
+                class="tw-flex tw-h-full tw-min-h-[100vh] tw-w-full tw-place-content-center tw-gap-6 tw-p-[5%] max-xl:tw-place-items-center max-lg:tw-flex-col"
+            >
+                <div class="tw-flex tw-flex-col tw-place-content-center">
+                    <div
+                        class="tw-font-serif tw-text-6xl tw-font-semibold tw-uppercase tw-leading-[80px] max-lg:tw-text-4xl max-md:tw-leading-snug"
+                    >
+                        <span> Real Interpreter </span>
+                        <br />
+                        <span class="tw-text-primary">24/7 Human Translation</span>
+                    </div>
+                    <!-- Improved hero subtext -->
+                    <div class="tw-mt-6 tw-text-lg tw-max-w-[550px] tw-text-gray-700">
+                        Bridging communication gaps with real-time human interpretation, available in English and Portuguese. Experience seamless communication for everyday situations – no apps, no complex setup, just a click away.
+                    </div>
+
+                    <div
+                        class="tw-mt-4 tw-flex tw-place-items-center tw-gap-4 tw-overflow-hidden tw-p-2"
+                    >
+                        <a
+                            class="btn tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
+                            href="https://realinterpreter.glide.page"
+                        >
+                            Get started
+                        </a>
+                        <a
+                            class="btn !tw-bg-[#c8cbf984] !tw-text-primary tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
+                            href="#features"
+                        >
+                            <span>Learn more</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="tw-flex tw-w-full tw-max-w-[50%] tw-place-content-center tw-place-items-center tw-overflow-hidden max-lg:tw-max-w-[unset]"
+                >
+                    <div
+                        class="tw-flex tw-max-h-[580px] tw-min-h-[450px] tw-min-w-[350px] tw-max-w-[650px] tw-overflow-hidden max-lg:tw-h-fit max-lg:tw-max-h-[320px] max-lg:tw-min-h-[180px] max-lg:tw-w-[320px] max-lg:tw-min-w-[320px]"
+                    >
+                        <img
+                            src="./assets/images/home/iphone.png"
+                            alt="app"
+                            class="tw-h-full tw-w-full tw-object-contain"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section
+            class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
+            id="numbers"
+        >
+            <div class="tw-flex tw-flex-col tw-place-items-center tw-gap-8">
+                <h3 class="tw-text-3xl">In numbers</h3>
+                <div
+                    class="tw-flex tw-w-full tw-place-content-center tw-gap-10 max-md:tw-flex-col"
+                    id="numbers-container"
+                >
+                    <div>
+                        <span class="tw-text-6xl max-lg:tw-text-4xl">
+                            <span id="installs">50</span><span>+</span>
+                        </span>
+                        <span
+                            class="tw-text-xl tw-font-medium tw-text-gray-800"
+                        >
+                            /Installs
+                        </span>
+                    </div>
+                    <div class="tw-text-6xl">
+                        <span class="tw-text-6xl max-lg:tw-text-4xl">
+                            <span id="hours">400</span>
+                            <span>+</span>
+                        </span>
+                        <span
+                            class="tw-text-xl tw-font-medium tw-text-gray-800"
+                        >
+                            /minutes interpreted
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
+            id="features"
+        >
+            <div
+                class="tw-mt-8 tw-flex tw-flex-col tw-place-items-center tw-gap-5"
+            >
+                <div
+                    class="tw-mt-5 tw-flex tw-flex-col tw-gap-3 tw-text-center"
+                >
+                    <h3 class="tw-font-serif tw-text-xl tw-text-primary">
+                        Key Features
+                    </h3>
+                    <h2 class="tw-font-serif tw-text-4xl tw-font-semibold">
+                        Why Choose Real Interpreter?
+                    </h2>
+                </div>
+                <div
+                    class="tw-mt-6 tw-flex tw-max-w-[60%] tw-flex-wrap tw-place-content-center tw-gap-2 max-lg:tw-flex-col"
+                >
+                    <div
+                        class="tw-flex tw-h-[250px] tw-w-[350px] tw-flex-col tw-gap-2 tw-p-4 tw-text-center"
+                    >
+                        <i class="bi bi-lightning-charge-fill tw-text-5xl tw-text-primary"></i>
+                        <h3 class="tw-text-2xl tw-font-semibold">
+                            Instant Access
+                        </h3>
+                        <div class="tw-text-[#595959]">
+                            Start a call with a human interpreter in seconds via a simple link or home screen icon.
+                        </div>
+                    </div>
+                    <div
+                        class="tw-flex tw-h-[250px] tw-w-[350px] tw-flex-col tw-gap-2 tw-p-4 tw-text-center"
+                    >
+                        <i class="bi bi-download tw-text-5xl tw-text-primary"></i>
+                        <h3 class="tw-text-2xl tw-font-semibold">
+                            No Downloads Needed
+                        </h3>
+                        <div class="tw-text-[#595959]">
+                            Our Progressive Web App (PWA) installs directly from your browser for an intuitive and quick setup.
+                        </div>
+                    </div>
+                    <div
+                        class="tw-flex tw-h-[250px] tw-w-[350px] tw-flex-col tw-gap-2 tw-p-4 tw-text-center"
+                    >
+                        <i class="bi bi-easel2-fill tw-text-5xl tw-text-primary"></i>
+                        <h3 class="tw-text-2xl tw-font-semibold">
+                            Minimalist Interface
+                        </h3>
+                        <div class="tw-text-[#595959]">
+                            Designed for clarity and ease of use, even for those with limited digital experience.
+                        </div>
+                    </div>
+                    <div
+                        class="tw-flex tw-h-[250px] tw-w-[350px] tw-flex-col tw-gap-2 tw-p-4 tw-text-center"
+                    >
+                        <i class="bi bi-tools tw-text-5xl tw-text-primary"></i>
+                        <h3 class="tw-text-2xl tw-font-semibold">
+                            Practical Utility
+                        </h3>
+                        <div class="tw-text-[#595959]">
+                            Ideal for everyday situations like bank visits, medical appointments, interviews, and travel.
+                        </div>
+                    </div>
+                    <div
+                        class="tw-flex tw-h-[250px] tw-w-[350px] tw-flex-col tw-gap-2 tw-p-4 tw-text-center"
+                    >
+                        <i class="bi bi-person-heart tw-text-5xl tw-text-primary"></i>
+                        <h3 class="tw-text-2xl tw-font-semibold">
+                            Human Touch
+                        </h3>
+                        <div class="tw-text-[#595959]">
+                            Real interpreters, empathetic and culturally aware, ensuring nuanced communication that AI cannot match.
+                        </div>
+                    </div>
+                    <div
+                        class="tw-flex tw-h-[250px] tw-w-[350px] tw-flex-col tw-gap-2 tw-p-4 tw-text-center"
+                    >
+                        <i class="bi bi-shield-lock-fill tw-text-5xl tw-text-primary"></i>
+                        <h3 class="tw-text-2xl tw-font-semibold">
+                            Trust & Security
+                        </h3>
+                        <div class="tw-text-[#595959]">
+                            Your service is private and discreet – no sensitive data shared with third parties.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Moved Common Use Cases section before Pricing -->
+        <section
+            class="tw-mt-5 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[2%]"
+        >
+            <h3
+                class="tw-font-serif tw-text-3xl tw-font-medium tw-text-primary max-md:tw-text-2xl"
+            >
+                Common Use Cases
+            </h3>
+            <div
+                class="tw-mt-10 tw-flex tw-flex-wrap tw-place-content-center tw-gap-8 max-lg:tw-flex-col"
+            >
+                <div
+                    class="tw-flex tw-w-[380px] tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
+                >
+                    <i class="bi bi-bank2 tw-text-5xl tw-text-primary"></i>
+                    <h3 class="tw-text-2xl tw-font-semibold">
+                        Bank Visits
+                    </h3>
+                    <p class="tw-mt-3 tw-text-center tw-text-gray-600">
+                        Navigating technical vocabulary at the bank.
+                    </p>
+                </div>
+                <div
+                    class="tw-flex tw-w-[380px] tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-border-2 tw-border-primary tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
+                >
+                    <i class="bi bi-plus-circle-fill tw-text-5xl tw-text-primary"></i>
+                    <h3 class="tw-text-2xl tw-font-semibold">
+                        Medical Appointments
+                    </h3>
+                    <p class="tw-mt-3 tw-text-center tw-text-gray-600">
+                        Assisting elderly family members during medical appointments.
+                    </p>
+                </div>
+                <div
+                    class="tw-flex tw-w-[380px] tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
+                >
+                    <i class="bi bi-airplane-fill tw-text-5xl tw-text-primary"></i>
+                    <h3 class="tw-text-2xl tw-font-semibold">
+                        Travel
+                    </h3>
+                    <p class="tw-mt-3 tw-text-center tw-text-gray-600">
+                        Traveling to countries where language is a barrier.
+                    </p>
+                </div>
+                <div
+                    class="tw-flex tw-w-[380px] tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-border-2 tw-border-primary tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
+                >
+                    <i class="bi bi-file-earmark-text-fill tw-text-5xl tw-text-primary"></i>
+                    <h3 class="tw-text-2xl tw-font-semibold">
+                        Bureaucratic Processes
+                    </h3>
+                    <p class="tw-mt-3 tw-text-center tw-text-gray-600">
+                        Supporting refugees and immigrants in bureaucratic processes.
+                    </p>
+                </div>
+                <div
+                    class="tw-flex tw-w-[380px] tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
+                >
+                    <i class="bi bi-shop tw-text-5xl tw-text-primary"></i>
+                    <h3 class="tw-text-2xl tw-font-semibold">
+                        Business Interactions
+                    </h3>
+                    <p class="tw-mt-3 tw-text-center tw-text-gray-600">
+                        Providing assistance to businesses with foreign tourists or clients.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="tw-mt-5 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[2%]"
+            id="pricing"
+        >
+            <h3
+                class="tw-font-serif tw-text-3xl tw-font-medium tw-text-primary max-md:tw-text-2xl"
+            >
+                Flexible Plans
+            </h3>
+            <!-- pricing -->
+            <div
+                class="tw-mt-10 tw-flex tw-flex-wrap tw-place-content-center tw-gap-8 max-lg:tw-flex-col"
+            >
+                <div
+                    class="tw-flex tw-w-[380px] tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
+                >
+                    <h3 class="">
+                        <span class="tw-text-5xl tw-font-semibold">€5</span>
+                    </h3>
+                    <p class="tw-mt-3 tw-text-center tw-text-gray-600">
+                        Basic Plan
+                    </p>
+                    <hr />
+                    <ul
+                        class="tw-mt-4 tw-flex tw-flex-col tw-gap-2 tw-text-center tw-text-lg tw-text-gray-600"
+                    >
+                        <li>24/7 Human Interpreter Service</li>
+                        <li>10 minutes of Calls</li>
+                        <li>Valid for 1 Month.</li>
+                    </ul>
+                    <a
+                        href="https://buy.stripe.com/28EcMXbnh1iG3B7frP7bW00"
+                        class="btn tw-mt-8 !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
+                    >
+                        Get now
+                    </a>
+                </div>
+                <div
+                    class="tw-flex tw-w-[380px] tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-border-2 tw-border-primary tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
+                >
+                    <h3 class="">
+                        <span class="tw-text-5xl tw-font-semibold">€10</span>
+                    </h3>
+                    <p class="tw-mt-3 tw-text-center tw-text-gray-600">
+                        Standard Plan
+                    </p>
+                    <hr />
+                    <ul
+                        class="tw-mt-4 tw-flex tw-flex-col tw-gap-2 tw-text-center tw-text-lg tw-text-gray-600"
+                    >
+                        <li>24/7 Human Interpreter Service</li>
+                        <li>30 minutes of Calls</li>
+                        <li>Valid for 1 Year</li>
+                    </ul>
+                    <a
+                        href="https://buy.stripe.com/eVq3cn0ID4uS0oVfrP7bW01"
+                        class="btn tw-mt-8 !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
+                    >
+                        Get now
+                    </a>
+                </div>
+                <div
+                    class="tw-flex tw-w-[380px] tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
+                >
+                    <h3 class="">
+                        <span class="tw-text-5xl tw-font-semibold">€20</span>
+                        <span class="tw-text-2xl tw-text-gray-600">/mo</span>
+                    </h3>
+                    <p class="tw-mt-3 tw-text-center tw-text-gray-600">
+                        Pro Plan
+                    </p>
+                    <hr />
+                    <ul
+                        class="tw-mt-4 tw-flex tw-flex-col tw-gap-2 tw-text-center tw-text-lg tw-text-gray-600"
+                    >
+                        <li>24/7 Human Interpreter Service</li>
+                        <li>30 minutes of call Every Month</li>
+                        <li>Ideal for regular linguistic support.</li>
+                    </ul>
+                    <a
+                        href="https://buy.stripe.com/00w8wHcrl6D08Vr4Nb7bW02"
+                        class="btn tw-mt-8 !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
+                    >
+                        Get now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="tw-mt-5 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[2%]"
+        >
+            <h3
+                class="tw-font-serif tw-text-3xl tw-font-medium tw-text-primary max-md:tw-text-2xl"
+            >
+                What our clients say
+            </h3>
+            <!-- Testimonials -->
+            <div class="tw-mt-8 tw-flex tw-flex-wrap tw-justify-center tw-gap-8">
+                <div class="tw-flex tw-flex-col tw-w-[350px] tw-min-h-[300px] tw-rounded-lg tw-p-6 tw-shadow-lg tw-bg-white">
+                    <div class="tw-flex tw-items-center tw-gap-4 tw-mb-4">
+                        <div class="tw-h-8 tw-w-8 tw-overflow-hidden tw-rounded-full tw-border-2 tw-border-solid tw-border-primary">
+                            <img src="./assets/images/people/women.jpg" class="tw-h-full tw-w-full tw-object-cover" alt="Trich B" />
+                        </div>
+                        <div>
+                            <div class="tw-font-semibold tw-text-lg">Trich B</div>
+                            <div class="tw-text-gray-600">AMI, CEO</div>
+                        </div>
+                    </div>
+                    <div class="tw-flex tw-text-primary tw-mb-2">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="tw-italic tw-text-gray-600">
+                        I needed to open a bank account and didn't know how to explain my documents. Real Interpreter saved me! Everything was sorted in 5 minutes.
+                    </p>
+                </div>
+                <div class="tw-flex tw-flex-col tw-w-[350px] tw-min-h-[300px] tw-rounded-lg tw-p-6 tw-shadow-lg tw-bg-white">
+                    <div class="tw-flex tw-items-center tw-gap-4 tw-mb-4">
+                        <div class="tw-h-8 tw-w-8 tw-overflow-hidden tw-rounded-full tw-border-2 tw-border-solid tw-border-primary">
+                            <img src="./assets/images/people/man.jpg" class="tw-h-full tw-w-full tw-object-cover" alt="John B" />
+                        </div>
+                        <div>
+                            <div class="tw-font-semibold tw-text-lg">John B</div>
+                            <div class="tw-text-gray-600">ABC, CTO</div>
+                        </div>
+                    </div>
+                    <div class="tw-flex tw-text-primary tw-mb-2">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="tw-italic tw-text-gray-600">
+                        During an important job interview, I used Real Interpreter to ensure all my answers were properly understood. I got the job!
+                    </p>
+                </div>
+                <div class="tw-flex tw-flex-col tw-w-[350px] tw-min-h-[300px] tw-rounded-lg tw-p-6 tw-shadow-lg tw-bg-white">
+                    <div class="tw-flex tw-items-center tw-gap-4 tw-mb-4">
+                        <div class="tw-h-8 tw-w-8 tw-overflow-hidden tw-rounded-full tw-border-2 tw-border-solid tw-border-primary">
+                            <img src="./assets/images/people/man2.jpg" class="tw-h-full tw-w-full tw-object-cover" alt="Mante" />
+                        </div>
+                        <div>
+                            <div class="tw-font-semibold tw-text-lg">Mante</div>
+                            <div class="tw-text-gray-600">XYZ, CTO</div>
+                        </div>
+                    </div>
+                    <div class="tw-flex tw-text-primary tw-mb-2">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="tw-italic tw-text-gray-600">
+                        At the hospital, I was very nervous and couldn't explain my symptoms. The interpreter was very professional and helped me get proper treatment.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tw-mt-5 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[2%]" id="faq">
+            <h3 class="tw-font-serif tw-text-3xl tw-font-medium tw-text-primary max-md:tw-text-2xl">
+                Frequently Asked Questions
+            </h3>
+            <div class="tw-mt-8 tw-max-w-[800px] tw-w-full tw-flex tw-flex-col tw-gap-6">
+                <details class="tw-w-full tw-p-6 tw-rounded-lg tw-shadow-lg tw-bg-white">
+                    <summary class="tw-text-xl tw-font-semibold tw-cursor-pointer">What is Real Interpreter?</summary>
+                    <div class="tw-mt-4 tw-text-gray-700">
+                        <p>
+                            Real Interpreter is a real-time human interpretation service designed to help non-native speakers communicate clearly in real-life situations across Portugal. You can access the service instantly when needed — no scheduling required.
+                        </p>
+                        <ul class="tw-list-disc tw-list-inside tw-mt-2">
+                            <li>Live interpretation via phone</li>
+                            <li>Focused on Portuguese ↔ English</li>
+                            <li>For banks, hospitals, public services, etc.</li>
+                        </ul>
+                    </div>
+                </details>
+                <details class="tw-w-full tw-p-6 tw-rounded-lg tw-shadow-lg tw-bg-white">
+                    <summary class="tw-text-xl tw-font-semibold tw-cursor-pointer">How does it work?</summary>
+                    <div class="tw-mt-4 tw-text-gray-700">
+                        <p>
+                            Purchase a plan through our website. When you need help, open the app and call us — an interpreter will join the conversation and translate both sides live.
+                        </p>
+                        <ul class="tw-list-disc tw-list-inside tw-mt-2">
+                            <li>Buy minutes in advance</li>
+                            <li>Call via the app or WhatsApp</li>
+                            <li>Interpreter speaks with both sides</li>
+                        </ul>
+                    </div>
+                </details>
+                <details class="tw-w-full tw-p-6 tw-rounded-lg tw-shadow-lg tw-bg-white">
+                    <summary class="tw-text-xl tw-font-semibold tw-cursor-pointer">What plans are available?</summary>
+                    <div class="tw-mt-4 tw-text-gray-700">
+                        <p>
+                            We offer two simple prepaid options — no subscription or hidden fees.
+                        </p>
+                        <ul class="tw-list-disc tw-list-inside tw-mt-2">
+                            <li>Standard: €10 for 30 minutes (valid 1 year)</li>
+                            <li>Basic: €5 for 10 minutes (valid 1 month)</li>
+                            <li>Pro: €20/month for 30 monthly minutes</li>
+                            <li>Payments processed via Stripe</li>
+                        </ul>
+                    </div>
+                </details>
+                <details class="tw-w-full tw-p-6 tw-rounded-lg tw-shadow-lg tw-bg-white">
+                    <summary class="tw-text-xl tw-font-semibold tw-cursor-pointer">How can I see my remaining minutes?</summary>
+                    <div class="tw-mt-4 tw-text-gray-700">
+                        <p>
+                            Log in to access your personal dashboard. There, you can view:
+                        </p>
+                        <ul class="tw-list-disc tw-list-inside tw-mt-2">
+                            <li>Remaining minutes</li>
+                            <li>Plan type and expiration</li>
+                            <li>Purchase history</li>
+                        </ul>
+                    </div>
+                </details>
+                <details class="tw-w-full tw-p-6 tw-rounded-lg tw-shadow-lg tw-bg-white">
+                    <summary class="tw-text-xl tw-font-semibold tw-cursor-pointer">Do I need to install an app?</summary>
+                    <div class="tw-mt-4 tw-text-gray-700">
+                        <p>
+                            Not exactly. Real Interpreter is a web app — it runs in your browser. You can add it to your home screen for a more app-like experience.
+                        </p>
+                        <ul class="tw-list-disc tw-list-inside tw-mt-2">
+                            <li>No download required</li>
+                            <li>Works on Chrome and Safari</li>
+                            <li>Add to home screen in 10 seconds</li>
+                        </ul>
+                    </div>
+                </details>
+                <details class="tw-w-full tw-p-6 tw-rounded-lg tw-shadow-lg tw-bg-white">
+                    <summary class="tw-text-xl tw-font-semibold tw-cursor-pointer">Is my data secure?</summary>
+                    <div class="tw-mt-4 tw-text-gray-700">
+                        <p>
+                            Absolutely. We use trusted providers to ensure your privacy and safety.
+                        </p>
+                        <ul class="tw-list-disc tw-list-inside tw-mt-2">
+                            <li>Google Authentication (we never store passwords)</li>
+                            <li>Stripe handles payments securely</li>
+                            <li>No sensitive personal data is stored</li>
+                        </ul>
+                    </div>
+                </details>
+                <details class="tw-w-full tw-p-6 tw-rounded-lg tw-shadow-lg tw-bg-white">
+                    <summary class="tw-text-xl tw-font-semibold tw-cursor-pointer">Still have questions?</summary>
+                    <div class="tw-mt-4 tw-text-gray-700">
+                        <p>
+                            Reach out to our team — we’re happy to help.
+                        </p>
+                        <ul class="tw-list-disc tw-list-inside tw-mt-2">
+                            <li>📧 support@realinterpreter.eu</li>
+                            <li>Response usually within 24h</li>
+                            <li>Friendly and multilingual support</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <footer
+            class="tw-mt-auto tw-flex tw-w-full tw-place-content-around tw-gap-3 tw-p-[5%] tw-px-[10%] tw-text-black max-md:tw-flex-col"
+        >
+            <div
+                class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
+            >
+                <img
+                    src="./assets/logo.png"
+                    alt="logo"
+                    srcset=""
+                    class="tw-max-w-[120px]"
+                />
+                <div>
+                    2 Lord Edward St,
+                    <br />
+                    D02 P634,
+                    <br />
+                    United Kingdom
+                </div>
+                <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow us</div>
+                <div class="tw-flex tw-gap-4 tw-text-2xl">
+                    <a href="" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a
+                        href="https://twitter.com/@pauls_freeman"
+                        aria-label="Twitter"
+                    >
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a
+                        href="https://instagram.com/"
+                        class="tw-h-[40px] tw-w-[40px]"
+                        aria-label="Instagram"
+                    >
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-gap-4">
+                <h2 class="tw-text-3xl max-md:tw-text-xl">Resources</h2>
+                <div class="tw-flex tw-flex-col tw-gap-3 max-md:tw-text-sm">
+                    <a href="" class="footer-link">About us</a>
+                    <a href="" class="footer-link">FAQ</a>
+                    <a href="" class="footer-link">Contact Us</a>
+                    <a href="" class="footer-link">Blogs</a>
+                    <a href="" class="footer-link">Privacy policy</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./index.js"></script>
+</html>
