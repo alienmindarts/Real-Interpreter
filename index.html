@@ -59,7 +59,7 @@
     <body class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#fff]">
         <a href="#main" class="skip-link">Skip to content</a>
         <header
-            class="tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around"
+            class="tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around tw-text-white header--on-hero"
         >
             <a class="tw-h-[50px] tw-w-[50px] tw-p-[4px]" href="">
                 <img
@@ -73,7 +73,7 @@
                 id="collapsed-header-items"
             >
                 <div
-                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base tw-text-black max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
+                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
                 >
                     <a class="header-links" href="#about"> About us </a>
                     <a class="header-links" href="#features"> Features </a>
@@ -94,7 +94,7 @@
                 </div>
             </div>
             <button
-                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-white lg:tw-hidden"
                 onclick="toggleHeader()"
                 aria-label="menu"
                 id="collapse-btn"
@@ -105,16 +105,16 @@
         <main id="main">
 
         <section
-            class="tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-lg:tw-p-4 max-md:tw-mt-[50px]"
+            class="tw-relative hero tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-lg:tw-p-4 max-md:tw-mt-[50px]"
         >
             <div
                 class="tw-flex tw-h-full tw-min-h-[100vh] tw-w-full tw-place-content-center tw-gap-6 tw-p-[5%] max-xl:tw-place-items-center max-lg:tw-flex-col"
             >
-                <div class="tw-flex tw-flex-col tw-place-content-center">
+                <div class="tw-flex tw-flex-col tw-place-content-center tw-text-white">
                     <h1 class="tw-font-serif hero-title tw-font-semibold">
                         <span class="no-wrap">24/7 Portuguese ↔ English</span> interpreter in Portugal
                     </h1>
-                    <div class="tw-mt-6 tw-text-lg tw-max-w-[550px] tw-text-gray-700">
+                    <div class="tw-mt-6 tw-text-lg tw-max-w-[600px] tw-text-white/80 lead">
                         Instantly get a human interpreter for banks, hospitals, airports, hotels and taxis. Tap to call or WhatsApp. No downloads needed.
                     </div>
 
@@ -122,13 +122,13 @@
                         class="tw-mt-4 tw-flex tw-place-items-center tw-gap-4 tw-overflow-hidden tw-p-2"
                     >
                         <a
-                            class="btn tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
+                            class="btn btn--accent tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
                             href="https://realinterpreter.glide.page"
                         >
                             Get started
                         </a>
                         <a
-                            class="btn !tw-bg-[#c8cbf984] !tw-text-primary tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
+                            class="btn btn--ghost tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
                             href="#features"
                         >
                             <span>Learn more</span>
@@ -175,7 +175,7 @@
                     </li>
                 </ol>
                 <div class="tw-mt-6 tw-text-center">
-                    <a href="#pricing" class="btn">See pricing</a>
+                    <a href="#pricing" class="btn btn--accent">See pricing</a>
                 </div>
             </div>
         </section>
@@ -418,7 +418,7 @@
                     </ul>
                     <a
                         href="https://buy.stripe.com/28EcMXbnh1iG3B7frP7bW00"
-                        class="btn tw-mt-8 !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
+                        class="btn btn--plan tw-mt-8 !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
                     >
                         Get now
                     </a>
@@ -442,7 +442,7 @@
                     </ul>
                     <a
                         href="https://buy.stripe.com/eVq3cn0ID4uS0oVfrP7bW01"
-                        class="btn tw-mt-8 !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
+                        class="btn btn--plan tw-mt-8 !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
                     >
                         Get now
                     </a>
@@ -467,7 +467,7 @@
                     </ul>
                     <a
                         href="https://buy.stripe.com/00w8wHcrl6D08Vr4Nb7bW02"
-                        class="btn tw-mt-8 !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
+                        class="btn btn--plan tw-mt-8 !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
                     >
                         Get now
                     </a>

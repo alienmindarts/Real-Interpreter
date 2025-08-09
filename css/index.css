@@ -368,3 +368,116 @@ h1, h2, h3 {
         text-align: center;
     }
 }
+
+/* ===== Mockup-aligned theme additions ===== */
+:root{
+  --accent-gold: #e0b24b;
+  --navy-900: #0e1b2c;
+  --hero-image: url('../assets/images/home/hero.jpg');
+}
+
+/* Hero background with dark overlay similar to the mockup */
+.hero{
+  background-image:
+    linear-gradient(90deg, rgba(10,18,33,0.85) 0%, rgba(10,18,33,0.60) 40%, rgba(10,18,33,0.40) 100%),
+    var(--hero-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+/* Header on hero (desktop) */
+.header--on-hero .header-links{ color: #fff; }
+.header--on-hero #collapse-btn{ color: #fff; }
+
+/* Accent and ghost buttons (gold + subtle glass) */
+.btn--accent{
+  background-color: var(--accent-gold);
+  color: #111;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+.btn--accent:hover{ background-color: #d3a33a; }
+
+.btn--ghost{
+  background-color: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.btn--ghost:hover{ background-color: rgba(255,255,255,0.2); }
+
+/* Readability and emphasis */
+.lead{ font-size: clamp(1rem, 2.2vw, 1.25rem); }
+.hero h1, .hero .lead{ text-shadow: 0 4px 18px rgba(0,0,0,0.4); }
+.hero img{ filter: drop-shadow(0 24px 60px rgba(0,0,0,0.6)); }
+
+/* Section backgrounds to match mockup tone */
+#how-it-works{ background-color: #f7f8fb; }
+
+/* Pricing CTAs as deep navy */
+#pricing .btn{
+  background-color: var(--navy-900);
+  color: #fff;
+}
+
+/* Larger headline similar to mockup */
+.hero-title{
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* Mobile: when the slide-over menu is open (white), keep good contrast */
+@media not all and (min-width: 1024px){
+  .header--on-hero .collapsible-header .header-links{ color: #000; }
+  .header--on-hero #collapse-btn{ color: #000; }
+}
+/* ===== End mockup additions ===== */
+
+/* ===== Mockup polish tweaks ===== */
+.header--on-hero .header-links:hover{ color: var(--accent-gold); }
+.header--on-hero .header-links{ text-shadow: 0 2px 10px rgba(0,0,0,0.35); }
+
+body{ color:#0e0e0e; }
+
+/* Make feature/use-case cards slightly softer like the mockup */
+.use-case-card{
+  border-color: rgba(21,94,239,0.10);
+  box-shadow: 0 8px 22px rgba(13,31,89,0.10);
+}
+.use-case-card:hover{
+  box-shadow: 0 16px 38px rgba(13,31,89,0.14);
+}
+
+/* Numbers section spacing refinement */
+#numbers h3{ font-weight:600; }
+#numbers #numbers-container{ row-gap: 16px; }
+
+/* Ensure header stays readable when scrolled on small screens */
+@media (max-width: 1023.98px){
+  .header--on-hero .header-links{ text-shadow: none; }
+}
+/* ===== End mockup polish tweaks ===== */
+
+/* ===== Header solid state and icon color tweaks ===== */
+header{
+  transition: background-color .25s ease, color .25s ease, box-shadow .25s ease;
+}
+/* When hero is not in view (toggled by IntersectionObserver in index.js) */
+.header-solid{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(255,255,255,0.96);
+  color: #0f172a; /* near-black for contrast */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.header-solid .header-links{ color: #0f172a; }
+.header-solid #collapse-btn{ color: #0f172a; }
+@media (max-width:1023.98px){
+  .header-solid .collapsible-header{ background: #ffffff; }
+}
+
+/* Accent icon color to match mockup */
+#features .tw-text-primary{ color: var(--accent-gold) !important; }
+.use-case-card i{ color: var(--accent-gold); }
+/* ===== End header and icon tweaks ===== */

@@ -52,6 +52,25 @@ function responsive() {
 
 window.addEventListener("resize", responsive)
 
+// Header style toggles based on hero section visibility
+;(function setupHeaderObserver(){
+    const headerEl = document.querySelector('header')
+    const heroEl = document.querySelector('.hero')
+    if (!headerEl || !heroEl || !('IntersectionObserver' in window)) return
+
+    const io = new IntersectionObserver(([entry]) => {
+        if (entry && entry.isIntersecting) {
+            headerEl.classList.add('header--on-hero')
+            headerEl.classList.remove('header-solid')
+        } else {
+            headerEl.classList.remove('header--on-hero')
+            headerEl.classList.add('header-solid')
+        }
+    }, { threshold: 0.6 })
+
+    io.observe(heroEl)
+})()
+
 
 /**
  * Animations
