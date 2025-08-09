@@ -180,10 +180,17 @@ header > .collapsible-header{
         padding-top: 5%;
         padding-bottom: 5%;
         place-items: end;
-        background-color: #ffffff;
+        background-color: transparent; /* keep header readable while closed */
         color: #000000;
         overflow-y: auto;
-        box-shadow: 2px 0px 3px #000;
+        box-shadow: none;
+        pointer-events: none; /* prevent ghost overlay when closed */
+    }
+
+    header .collapsible-header.is-open{
+        background-color: #ffffff;
+        box-shadow: 2px 0px 3px rgba(0,0,0,0.25);
+        pointer-events: auto;
     }
 
     .header-links{
@@ -373,13 +380,13 @@ h1, h2, h3 {
 :root{
   --accent-gold: #e0b24b;
   --navy-900: #0e1b2c;
-  --hero-image: url('../assets/images/home/hero.jpg');
+  --hero-image: url('../assets/images/home/hero.png');
 }
 
 /* Hero background with dark overlay similar to the mockup */
 .hero{
   background-image:
-    linear-gradient(90deg, rgba(10,18,33,0.85) 0%, rgba(10,18,33,0.60) 40%, rgba(10,18,33,0.40) 100%),
+    linear-gradient(90deg, rgba(10,18,33,0.60) 0%, rgba(10,18,33,0.35) 45%, rgba(10,18,33,0.20) 100%),
     var(--hero-image);
   background-size: cover;
   background-position: center;
@@ -409,7 +416,7 @@ h1, h2, h3 {
 /* Readability and emphasis */
 .lead{ font-size: clamp(1rem, 2.2vw, 1.25rem); }
 .hero h1, .hero .lead{ text-shadow: 0 4px 18px rgba(0,0,0,0.4); }
-.hero img{ filter: drop-shadow(0 24px 60px rgba(0,0,0,0.6)); }
+.hero img{ filter: drop-shadow(0 18px 40px rgba(0,0,0,0.35)); }
 
 /* Section backgrounds to match mockup tone */
 #how-it-works{ background-color: #f7f8fb; }
@@ -429,7 +436,7 @@ h1, h2, h3 {
 
 /* Mobile: when the slide-over menu is open (white), keep good contrast */
 @media not all and (min-width: 1024px){
-  .header--on-hero .collapsible-header .header-links{ color: #000; }
+  .header--on-hero .collapsible-header.is-open .header-links{ color: #000; }
   .header--on-hero #collapse-btn{ color: #000; }
 }
 /* ===== End mockup additions ===== */
@@ -481,3 +488,35 @@ header{
 #features .tw-text-primary{ color: var(--accent-gold) !important; }
 .use-case-card i{ color: var(--accent-gold); }
 /* ===== End header and icon tweaks ===== */
+
+/* ===== Fixes: hero blur intensity, phone mockup halo, and mobile header readability ===== */
+/* Phone image translucent square/halo fix: allow shadow to render outside wrappers */
+.hero > div > div:last-child,
+.hero > div > div:last-child > div {
+  overflow: visible !important;
+}
+
+/* Extra safety: slightly softer shadow to avoid harsh rectangular edge on some GPUs */
+.hero img {
+  filter: drop-shadow(0 16px 36px rgba(0,0,0,0.32));
+}
+
+/* Mobile header readability while on hero: subtle top gradient; keep panel white only when open */
+@media (max-width: 640px){
+  header.header--on-hero{
+    background: linear-gradient(to bottom, rgba(10,18,33,0.55), rgba(10,18,33,0)) !important;
+    color: #fff;
+  }
+  header.header--on-hero .collapsible-header{
+    background: transparent;
+    box-shadow: none;
+  }
+  header.header--on-hero .collapsible-header.is-open{
+    background: #ffffff;
+    box-shadow: 2px 0 3px rgba(0,0,0,0.25);
+  }
+  header.header--on-hero .header-links,
+  header.header--on-hero #collapse-btn{
+    color: #fff;
+  }
+}
